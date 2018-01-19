@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="142dp"
+    android:background="@drawable/bg_list_item"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingBottom="16.0dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="16.0dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="2dp">
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="82dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_book_cover_default"/>
+    </android.support.v7.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cover"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/cover"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/text_size_large"
+        tools:text="资生堂 安热沙"/>
+
+    <TextView
+        android:id="@+id/tv_describe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_title"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="4.0dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/textSecondary"
+        android:textSize="@dimen/text_size_medium"
+        tools:text="网易旗下利用大数据技术提供移动互联网应用的子公司,过去8年,先后推出有道词典、有道翻译官、有道云笔记、惠惠网、有道推广、有道精品课、有道口语大师等系列产品,总.cas sac as  s"/>
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cover"
+        android:layout_alignLeft="@id/tv_title"
+        android:textColor="@color/textAssistSecondary"
+        android:textSize="@dimen/text_size_medium"
+        tools:text="茶叶蛋"/>
+
+    <com.youshibi.app.ui.widget.ShapeTextView
+        android:id="@+id/tv_is_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cover"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="1.5dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="1.5dp"
+        android:textColor="@color/md_red_200"
+        android:textSize="@dimen/text_size_micro"
+        app:super_cornerRadius="2dp"
+        app:super_strokeColor="@color/md_red_200"
+        app:super_strokeWidth="1px"
+        tools:text="已完结"/>
+
+    <com.youshibi.app.ui.widget.ShapeTextView
+        android:id="@+id/tv_word_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cover"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@id/tv_is_finish"
+        android:paddingBottom="1.5dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="1.5dp"
+        android:textColor="@color/textAssistSecondary"
+        android:textSize="@dimen/text_size_micro"
+        app:super_cornerRadius="2dp"
+        app:super_strokeColor="@color/textAssistSecondary"
+        app:super_strokeWidth="1px"
+        tools:text="2.5万字"/>
+
+
+</RelativeLayout>

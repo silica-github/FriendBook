@@ -1,0 +1,186 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'fastdex.app'
+
+def cfg = rootProject.ext.configuration // 项目配置
+def libs = rootProject.ext.libraries // 库
+
+android {
+    compileSdkVersion cfg.compileVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    defaultConfig {
+        applicationId cfg.package
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.version_code
+        versionName cfg.version_name
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true //SVG兼容库
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.kaka.app",
+                JPUSH_APPKEY : "fb80449a399eaa7cc2efd534", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    signingConfigs {
+        zhumeng {
+            keyAlias 'zhumeng'
+            keyPassword '123456nn'
+            storeFile file('/resources/zhumeng1.jks')
+            storePassword '123456nn'
+        }
+    }
+
+
+//
+//    signingConfigs {
+//        release {
+//            storeFile file("FriendBook.jks")
+//            storePassword "zchu@youshu\$888"
+//            keyAlias "youshu"
+//            keyPassword "Vary@laiyoushu\$8073"
+//        }
+//    }
+
+
+    buildTypes {
+        debug {
+            //打包的签名
+            // signingConfig signingConfigs.release
+            //是否混淆代码
+//            minifyEnabled false
+            //去除未使用的资源文件
+            //shrinkResources true
+
+        }
+        release {
+//            // signingConfig signingConfigs.release
+//            minifyEnabled false
+//            shrinkResources false
+//            zipAlignEnabled false
+//            debuggable false
+//            //混淆文件的位置
+//            //proguard-android.txt是默认的混淆声明，文件的目录在 <sdk目录>/tools/proguard/proguard-android.txt
+//            //proguard-rules.pro 自定义的混淆文件，目录就在 app/proguard-rules.pro
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            // 签名
+            signingConfig signingConfigs.zhumeng
+
+        }
+    }
+
+    //是否移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+}
+
+greendao {
+    schemaVersion cfg.greendaoSchemaVersion
+   // daoPackage cfg.greendaoDaoPackage
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    //support
+    compile 'com.android.support:support-v4:26.0.2'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:design:26.0.2'
+    compile 'com.android.support:cardview-v7:26.0.2'
+    compile 'com.android.support:recyclerview-v7:26.0.2'
+    //netWork
+    compile 'com.squareup.okio:okio:1.13.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    //compile 'com.squareup.retrofit2:converter-gson:' + libs.retrofit
+    //compile 'com.squareup.retrofit2:converter-scalars:' + libs.retrofit
+    compile 'com.google.code.gson:gson:2.8.2'
+    //rx
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.3.0'
+    compile 'com.jakewharton.rxrelay:rxrelay:1.2.0'
+    compile('com.zchu:rxcache:1.2.6') {
+        exclude group: 'com.android.support'
+    }
+    //log
+    debugCompile 'com.zchu:zlog:1.0.1'
+    testCompile 'com.zchu:zlog:1.0.1'
+    releaseCompile 'com.zchu:zlog-no-op:1.0.1'
+    //正式发布时会将所有的打印方法替换为空方法
+    //dagger
+    /* compile 'com.google.dagger:dagger:2.10'
+                                             annotationProcessor 'com.google.dagger:dagger-compiler:2.10'*/
+    //ui
+    // compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
+    compile('com.afollestad.material-dialogs:core:0.9.4.3') {
+        exclude group: 'com.android.support'
+    }
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.4.1'
+    compile('com.r0adkll:slidableactivity:2.0.5') {
+        exclude group: 'com.android.support'
+    }
+    compile('com.gyf.barlibrary:barlibrary:2.2.7') {
+        exclude group: 'com.android.support'
+    }
+    compile 'com.github.ikidou:FragmentBackHandler:2.1'
+    compile 'com.kyleduo.switchbutton:library:2.0.0'
+    //ImageLoader
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+    compile 'com.github.bumptech.glide:okhttp3-integration:4.1.1'
+    compile('com.github.bumptech.glide:recyclerview-integration:4.1.1') {
+        // Excludes the support library because it's already included by Glide.
+        transitive = false
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    // okgo
+    compile 'com.lzy.net:okgo:3.0.4'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //orm
+    compile 'org.greenrobot:greendao:3.2.2'
+    //umeng
+    compile 'com.umeng.analytics:analytics:6.1.2'
+    compile project(':reader')
+    compile project(':label-selection')
+    //    compile project(':app-update')
+    // 极光推送
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+    // 不需要接入, BBSSDKGUI 里面有, 坑
+    //    compile files('libs/BBSSDKCore-2017.1031.1127.jar')
+    //    compile files('libs/MobCommons-2017.1031.1127.jar')
+    //    compile files('libs/MobTools-2017.1031.1127.jar')
+    //    compile project(':BBSSDKGUI')
+    //    compile project(path: ':BBSSDKTHEME1')
+    // bugly
+//    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile files('libs/AdLeFee_SDK_Android.jar')
+    compile files('libs/Baidu_MobAds_SDK_5.6_20170410.jar')
+    compile files('libs/alipaySdk-20170922.jar')
+}

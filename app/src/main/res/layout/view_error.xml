@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/error_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:clickable="false"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_vector_load_error" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dp"
+        android:clickable="false"
+        android:text="@string/load_data_failure"
+        android:textColor="@color/textAssist"
+        android:textSize="14sp" />
+
+
+    <com.youshibi.app.ui.widget.ShapeTextView
+        android:id="@+id/reload_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12.0dp"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/click_retry"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        app:super_cornerRadius="50dp"
+        app:super_strokeColor="@color/colorAccent"
+        app:super_solidColor="@color/colorForeground"
+        app:super_strokeWidth="1dp" />
+
+</LinearLayout>

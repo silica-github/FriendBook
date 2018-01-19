@@ -1,0 +1,65 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+    //项目版本
+    configuration = [
+
+            // 这个是包名
+            package              : "com.kaka.app",
+
+
+            buildToolsVersion    : "26.0.2",
+            compileVersion       : 27,
+            minSdk               : 15,
+            targetSdk            : 22,
+            version_code         : 1,
+            version_name         : "v1.0",
+            greendaoSchemaVersion: 10,
+    ]
+
+    //对一些库的版本进行统一管理
+    libraries = [
+            supportVersion: "26.0.2",
+            retrofit      : "2.3.0",
+            leakcanary    : "1.5",
+            blockcanary   : "1.4.0"
+    ]
+
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.github.typ0520:fastdex-gradle:0.8.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    //开启link警告检查
+    /*gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }*/
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

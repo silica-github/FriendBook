@@ -1,0 +1,26 @@
+<resources>
+    <!-- 字体规范-->
+    <dimen name="text_size_micro">10.0sp</dimen>
+    <dimen name="text_size_small">12.0sp</dimen>
+    <dimen name="text_size_medium">14.0sp</dimen>
+    <dimen name="text_size_large">16.0sp</dimen>
+    <dimen name="text_size_xlarge">18.0sp</dimen>
+    <dimen name="text_size_extra_large">22.0sp</dimen>
+
+    <dimen name="space_ground_horizontal">20dp</dimen><!--全局的根布局左右水平间距-->
+
+    <dimen name="toolbar_title_size">18sp</dimen>
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="compat_bottom_navigation_shadow_height">1dp</dimen>
+
+    <dimen name="tab_height">40dp</dimen>
+    <dimen name="elevation_app_bar">0dp</dimen>
+    <dimen name="load_more_height">48dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

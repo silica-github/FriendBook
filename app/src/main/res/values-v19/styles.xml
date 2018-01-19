@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 4.4以上启动时  透明状态栏和导航栏 -->
+    <style name="AppBaseTheme.Translucent">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="AppBaseTheme.Translucent.StateBar">
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="Read.Setting.Dialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

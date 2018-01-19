@@ -1,0 +1,234 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorGrounding</item>
+        <item name="android:listDivider">@drawable/bg_list_divider</item>
+
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+    </style>
+
+    <style name="AppBaseTheme.Translucent" />
+
+    <style name="AppBaseTheme.Translucent.StateBar" />
+
+    <!-- 启动界面style -->
+    <style name="AppBaseTheme.Launcher" parent="AppBaseTheme.Translucent">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+
+    </style>
+
+    <style name="BottomNavigationViewTheme" parent="AppTheme"/>
+
+    <style name="ToolbarMenu">
+        <item name="android:background">?attr/actionBarItemBackground</item>
+        <item name="android:minWidth">36dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <!-- 如果界面需要侧滑必须设置这个主题 -->
+    <style name="AppTheme.Slide">
+        <!--<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>-->
+    </style>
+
+    <style name="AppTheme.Translucent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+
+
+    <style name="AppTheme.NoWindowBackground">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+
+    <style name="NoActivityAnimation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+
+    <style name="AppTheme.Slide.NoActivityAnimation">
+        <item name="android:windowAnimationStyle">@style/NoActivityAnimation</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="LoadingProgressBar" parent="Widget.MaterialProgressBar.ProgressBar">
+        <item name="android:minWidth">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="LoadingProgressBar.LoadMore">
+        <item name="android:minWidth">24dp</item>
+        <item name="android:maxWidth">24dp</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
+    <style name="LoadingProgressBar.ExploreTab">
+        <item name="android:minWidth">18dp</item>
+        <item name="android:maxWidth">18dp</item>
+        <item name="android:minHeight">18dp</item>
+        <item name="android:maxHeight">18dp</item>
+    </style>
+
+
+    <style name="Read" />
+
+    <style name="Read.Setting" />
+
+    <style name="Read.Setting.Button">
+        <item name="android:background">@drawable/read_bg_setting_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/read_menu_text</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:minWidth">42dp</item>
+    </style>
+
+    <style name="Read.Setting.ThemeView">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="super_cornerRadius">10dp</item>
+        <item name="super_strokeWidth">1dp</item>
+        <item name="super_strokeColor_selected">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="Read.Setting.Dialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Read.Setting.ImageButton">
+        <item name="android:background">@drawable/read_bg_setting_button</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="Read.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="actionMenuTextColor">@color/read_text_primary</item>
+        <item name="colorControlNormal">@color/read_text_primary</item>
+    </style>
+
+    <style name="Read.TextAppearance.ActionBar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/read_text_primary</item>
+    </style>
+
+    <style name="Read.BottomMenu">
+        <item name="android:textColor">@color/read_menu_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/read_bg_bottom_menu</item>
+    </style>
+
+    <style name="Read.BottomMenu.IconButton">
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:layout_width">68dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Read.BottomMenu.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">10.0dp</item>
+        <item name="android:paddingRight">10.0dp</item>
+        <item name="android:paddingTop">18.0dp</item>
+        <item name="android:paddingBottom">18.0dp</item>
+    </style>
+
+    <style name="BottomNavigation" />
+
+    <style name="BottomNavigation.GroupView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="BottomNavigation.ItemView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="BottomNavigation.ItemView.Icon" parent="">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">top|center_horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style name="BottomNavigation.ItemView.Title" parent="">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="SwitchButtonStyleMD" parent="SwitchButtonMD">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+</resources>

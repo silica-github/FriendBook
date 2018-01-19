@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BottomNavigation.GroupView"
+    android:background="@color/colorForeground">
+
+
+    <FrameLayout
+        android:id="@+id/fl_add_bookcase"
+        style="@style/BottomNavigation.ItemView">
+
+        <android.support.v7.widget.AppCompatImageView
+            style="@style/BottomNavigation.ItemView.Icon"
+            app:srcCompat="@drawable/ic_vector_add_bookcase" />
+
+        <TextView
+            style="@style/BottomNavigation.ItemView.Title"
+            android:text="@string/book_detail_add_bookcase"
+            android:textColor="@color/textPrimary" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_download_book"
+        style="@style/BottomNavigation.ItemView"
+        android:visibility="gone">
+
+        <android.support.v7.widget.AppCompatImageView
+            style="@style/BottomNavigation.ItemView.Icon"
+            app:srcCompat="@drawable/ic_vector_download_book" />
+
+        <TextView
+            style="@style/BottomNavigation.ItemView.Title"
+            android:text="@string/book_detail_download_book"
+            android:textColor="@color/textPrimary" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_open_book"
+        style="@style/BottomNavigation.ItemView"
+        android:background="?colorPrimary">
+
+        <android.support.v7.widget.AppCompatImageView
+            style="@style/BottomNavigation.ItemView.Icon"
+            app:srcCompat="@drawable/ic_vector_book_read" />
+
+        <TextView
+            style="@style/BottomNavigation.ItemView.Title"
+            android:text="@string/book_detail_open_book"
+            android:textColor="@color/textPrimaryInverted" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookcase_spinner">
+        <item>最近阅读在前</item>
+        <item>按阅读次数</item>
+        <item>按名称排序</item>
+        <item>按创建时间</item>
+    </string-array>
+
+    <string-array name="search_hot">
+        <item>一念永恒</item>
+        <item>最强升级系统</item>
+        <item>绝世武神</item>
+        <item>仙逆</item>
+    </string-array>
+</resources>

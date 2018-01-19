@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_section_name"
+        android:layout_width="match_parent"
+        android:layout_height="48.0dp"
+        android:background="@drawable/bg_list_item_book_section"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/text_size_medium" />
+
+
+
+</LinearLayout>
